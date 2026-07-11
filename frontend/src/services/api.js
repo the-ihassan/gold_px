@@ -1,4 +1,13 @@
-const API_URL = '?? $url = "https://wing-responsibilities-convention-resulting.trycloudflare.com/api/bookings"  /api';
+﻿const API_URL = '?? $url = "https://wing-responsibilities-convention-resulting.trycloudflare.com/api/bookings"  /api';
+
+export async function registerUser(userData) {
+  const res = await fetch(${API_URL}/register, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(userData)
+  });
+  return res.json();
+}
 
 export async function getBookings() {
   const res = await fetch(${API_URL}/bookings);
@@ -13,8 +22,3 @@ export async function createBooking(data) {
   });
   return res.json();
 }
-
-
-
-
-
