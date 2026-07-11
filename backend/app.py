@@ -1,9 +1,9 @@
-﻿from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 app = Flask(__name__)
-# Explicitly allow GitHub Pages domain & localhost
-CORS(app, origins=["https://the-ihassan.github.io", "http://localhost:3000"])
+# Allow all origins for testing (you can restrict later)
+CORS(app, origins="*")
 
 bookings = [
     {'id': 1, 'client': 'Sarah Johnson', 'event': 'Wedding', 'date': '2026-08-15', 'status': 'Confirmed'}
