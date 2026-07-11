@@ -1,24 +1,15 @@
-﻿const API_URL = '?? $url = "https://wing-responsibilities-convention-resulting.trycloudflare.com/api/bookings"  /api';
+const API_URL = 'https://cheers-springer-asked-announcements.trycloudflare.com';
 
-export async function registerUser(userData) {
-  const res = await fetch(${API_URL}/register, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(userData)
-  });
+export async function registerUser(data) {
+  const res = await fetch(${API_URL}/register, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
   return res.json();
 }
-
 export async function getBookings() {
   const res = await fetch(${API_URL}/bookings);
   return res.json();
 }
-
 export async function createBooking(data) {
-  const res = await fetch(${API_URL}/bookings, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  });
+  const res = await fetch(${API_URL}/bookings, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
   return res.json();
 }
+
