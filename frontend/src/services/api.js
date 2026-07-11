@@ -1,4 +1,4 @@
-const API_URL = '?? https://del-holders-collected-principles.trycloudflare.com/api';
+const API_URL = '?? $url = "https://trends-dylan-fabrics-congress.trycloudflare.com/api/bookings"  /api';
 
 export async function getBookings() {
   const res = await fetch(${API_URL}/bookings);
