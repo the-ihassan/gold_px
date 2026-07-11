@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact GOLD Px</title>
+    <meta name="description" content="Get in touch with GOLD Px for luxury event lighting, decor, rentals and custom design ideas." />
+    <link rel="icon" type="image/jpeg" href="logo1.jpg" />
+    <link rel="apple-touch-icon" href="logo1.jpg" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="index.html" class="brand">
+        <img src="logo1.jpg" alt="GOLD Px logo" class="brand-logo" />
+        <span>GOLD Px</span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="bookings.html">Book Now</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀</button>
+    </header>
+
+    <main>
+      <section class="page-shell">
+        <div class="info-card">
+          <p class="eyebrow">Contact us</p>
+          <h1>Talk to us about your next luxury event.</h1>
+          <p>We create premium stages, lighting, arches, floors, and pixel LED experiences for weddings and events. Share your vision and we will help shape it.</p>
+          <div class="list-card">
+            <strong>WhatsApp</strong>
+            <div class="metric-row"><span>Call / chat</span><span><a href="https://wa.me/923145355656" target="_blank" rel="noopener">+92 314 5355656</a></span></div>
+          </div>
+          <div class="list-card">
+            <strong>Social</strong>
+            <div class="metric-row"><span>Instagram</span><span><a href="https://www.instagram.com/ghousia_lights/" target="_blank" rel="noopener">Follow</a></span></div>
+            <div class="metric-row"><span>Facebook</span><span><a href="https://facebook.com" target="_blank" rel="noopener">Follow</a></span></div>
+            <div class="metric-row"><span>TikTok</span><span><a href="https://www.tiktok.com/@ghousia.lights" target="_blank" rel="noopener">Follow</a></span></div>
+          </div>
+          <div class="list-card">
+            <strong>Booking delivery</strong>
+            <div class="metric-row"><span>Email</span><span><a href="mailto:ihassan.dev@outlook.com">ihassan.dev@outlook.com</a></span></div>
+            <div class="metric-row"><span>WhatsApp 1</span><span><a href="https://wa.me/923145355656" target="_blank" rel="noopener">+92 314 5355656</a></span></div>
+            <div class="metric-row"><span>WhatsApp 2</span><span><a href="https://wa.me/923335079575" target="_blank" rel="noopener">+92 333 5079575</a></span></div>
+          </div>
+        </div>
+        <div class="form-card">
+          <h3>Request a custom quote</h3>
+          <p class="rent-note">Advance payments are accepted via EasyPaisa on 03145355656.</p>
+          <form id="contact-form">
+            <div class="form-grid">
+              <label>
+                Name
+                <input name="name" required />
+              </label>
+              <label>
+                WhatsApp
+                <input name="phone" placeholder="+92 300 0000000" required />
+              </label>
+              <label class="full">
+                Event type
+                <input name="event_type" placeholder="Wedding / Mehndi / Corporate" required />
+              </label>
+              <label class="full">
+                Details
+                <textarea name="details" placeholder="Share your design idea, venue, budget and preferred services."></textarea>
+              </label>
+            </div>
+            <button class="button primary" type="submit">Send Request</button>
+            <div id="contact-feedback" class="notice"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> GOLD Px. Premium event lighting and decor.</p>
+      <p>Luxury designs • rentals • premium execution.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

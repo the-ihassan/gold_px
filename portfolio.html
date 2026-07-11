@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | GOLD Px</title>
+    <meta name="description" content="Explore recent wedding and event projects completed by GOLD Px." />
+    <link rel="icon" type="image/jpeg" href="logo1.jpg" />
+    <link rel="apple-touch-icon" href="logo1.jpg" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="index.html" class="brand">
+        <img src="logo1.jpg" alt="GOLD Px logo" class="brand-logo" />
+        <span>GOLD Px</span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="bookings.html">Book Now</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Portfolio</p>
+          <h1>Luxury wedding stages, immersive lighting, and signature event architecture.</h1>
+          <p>Explore our curated categories with premium visuals for stages, arches, floors, entrances, and pixel-led experiences.</p>
+        </div>
+
+        <div class="portfolio-category-list">
+          <button class="category-pill active" data-category="wedding">Wedding Stages</button>
+          <button class="category-pill" data-category="lighting">Lighting</button>
+          <button class="category-pill" data-category="entrances">Entrances</button>
+          <button class="category-pill" data-category="floors">Floors</button>
+          <button class="category-pill" data-category="arches">Arches & Gazebos</button>
+        </div>
+
+        <div class="featured-portfolio-card">
+          <img id="featured-portfolio-image" src="images/wedding stages/Luxury_Pakistani_wedding_stage_with_golden_drapes_floral_arr.jpg" alt="Featured wedding stage" />
+          <div>
+            <p class="eyebrow">Featured showcase</p>
+            <h2 id="featured-portfolio-title">Wedding Stage Showpiece</h2>
+            <p id="featured-portfolio-description">A grand wedding stage designed with golden drapes, floral detailing, layered lighting, and elegant symmetry for a royal atmosphere.</p>
+            <a class="button primary" href="bookings.html">Book This Style</a>
+          </div>
+        </div>
+
+        <div id="portfolio-gallery" class="portfolio-grid"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Services</p>
+          <h2>Everything you need for a luxurious event experience.</h2>
+        </div>
+        <div class="card-grid">
+          <article class="service-card">
+            <h3>Wedding Stages</h3>
+            <ul>
+              <li>Custom wedding stage designs</li>
+              <li>Premium floral and fabric styling</li>
+              <li>Golden drapes, backdrops and luxury detailing</li>
+            </ul>
+            <p class="rent-note">Rent varies with the seasons. Contact us for the current pricing.</p>
+          </article>
+          <article class="service-card">
+            <h3>Lighting & Pixel Sets</h3>
+            <ul>
+              <li>Architectural lighting</li>
+              <li>Pixel LED walls and moving effects</li>
+              <li>Stage wash, uplighting and immersive visuals</li>
+            </ul>
+            <p class="rent-note">Rent varies with the seasons. Contact us for the current pricing.</p>
+          </article>
+          <article class="service-card">
+            <h3>Entrances, Arches & Floors</h3>
+            <ul>
+              <li>Grand entryways and statement arches</li>
+              <li>Glow floor concepts and decorative flooring</li>
+              <li>Gazebo and outdoor event styling</li>
+            </ul>
+            <p class="rent-note">Rent varies with the seasons. Contact us for the current pricing.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section cta-section">
+        <div>
+          <p class="eyebrow">Contact us</p>
+          <h2>Get a custom quote, rental ideas, and design inspiration.</h2>
+        </div>
+        <a class="button primary" href="https://wa.me/923145355656" target="_blank" rel="noopener">WhatsApp Now</a>
+      </section>
+    </main>
+
+    <div id="gallery-modal" class="gallery-modal" aria-hidden="true">
+      <div class="gallery-modal-dialog">
+        <button id="gallery-close" class="gallery-close" type="button" aria-label="Close gallery">×</button>
+        <div class="gallery-modal-main">
+          <div class="gallery-main-image-wrapper">
+            <img id="gallery-main-image" src="" alt="" />
+            <div class="gallery-nav">
+              <button id="gallery-prev" class="button secondary" type="button">← Prev</button>
+              <button id="gallery-next" class="button secondary" type="button">Next →</button>
+            </div>
+          </div>
+          <div class="gallery-sidebar">
+            <p class="eyebrow">Category gallery</p>
+            <h3 id="gallery-title"></h3>
+            <p id="gallery-description"></p>
+            <div id="gallery-thumbnails" class="gallery-thumbnails"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> GOLD Px. Premium event lighting and decor.</p>
+      <p>Elegant lighting, curated decor, seamless delivery.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/portfolio.js"></script>
+  </body>
+</html>

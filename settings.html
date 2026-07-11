@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backend Settings | GOLD Px</title>
+    <meta name="description" content="Backend configuration and API setup for the GOLD Px booking system." />
+    <link rel="icon" type="image/jpeg" href="logo1.jpg" />
+    <link rel="apple-touch-icon" href="logo1.jpg" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="index.html" class="brand">
+        <img src="logo1.jpg" alt="GOLD Px logo" class="brand-logo" />
+        <span>GOLD Px</span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="bookings.html">Book Now</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-shell">
+        <div class="info-card">
+          <p class="eyebrow">Backend integration</p>
+          <h1>Connected to the GOLD Px FastAPI booking service.</h1>
+          <p>The public website now sends booking requests to the backend endpoint and displays a live confirmation response.</p>
+          <div class="list-card">
+            <strong>Project paths</strong>
+            <div class="metric-row"><span>Frontend</span><span>workspace root</span></div>
+            <div class="metric-row"><span>Backend</span><span>backend/</span></div>
+            <div class="metric-row"><span>API docs</span><span>/docs</span></div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3>Run the backend</h3>
+          <pre style="white-space: pre-wrap; color: var(--muted);">cd backend
+C:/Users/ihass_o69ipbk/AppData/Local/Microsoft/WindowsApps/python3.12.exe -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000</pre>
+          <p style="color: var(--muted);">The booking form targets <strong>http://127.0.0.1:8000/api/v1/bookings/</strong>.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> GOLD Px. Premium event lighting and decor.</p>
+      <p>Professional backend and polished customer experience.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

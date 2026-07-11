@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book with GOLD Px</title>
+    <meta name="description" content="Book premium wedding and event lighting services with GOLD Px." />
+    <link rel="icon" type="image/jpeg" href="logo1.jpg" />
+    <link rel="apple-touch-icon" href="logo1.jpg" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="index.html" class="brand">
+        <img src="logo1.jpg" alt="GOLD Px logo" class="brand-logo" />
+        <span>GOLD Px</span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="bookings.html" class="active">Book Now</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀</button>
+    </header>
+
+    <main>
+      <section class="page-shell">
+        <div class="info-card">
+          <p class="eyebrow">Booking request</p>
+          <h1>Plan a stunning event with the GOLD Px team.</h1>
+          <p>
+            Share your event details and we will contact you with a tailored concept, quote, and production plan.
+          </p>
+          <div class="list-card">
+            <strong>What happens next</strong>
+            <div class="metric-row"><span>Consultation</span><span>Within 24 hrs</span></div>
+            <div class="metric-row"><span>Design proposal</span><span>Custom plan</span></div>
+            <div class="metric-row"><span>Execution</span><span>Premium setup</span></div>
+          </div>
+          <div class="list-card">
+            <strong>Booking delivery</strong>
+            <div class="metric-row"><span>Email</span><span><a href="mailto:ihassan.dev@outlook.com">ihassan.dev@outlook.com</a></span></div>
+            <div class="metric-row"><span>WhatsApp 1</span><span><a href="https://wa.me/923145355656" target="_blank" rel="noopener">+92 314 5355656</a></span></div>
+            <div class="metric-row"><span>WhatsApp 2</span><span><a href="https://wa.me/923335079575" target="_blank" rel="noopener">+92 333 5079575</a></span></div>
+          </div>
+          <div class="list-card">
+            <strong>API status</strong>
+            <div class="metric-row"><span>Backend endpoint</span><span>/api/v1/bookings</span></div>
+            <div class="metric-row"><span>Server</span><span>FastAPI</span></div>
+          </div>
+        </div>
+
+        <div class="form-card" id="auth-panel">
+          <h3>Sign in or create an account</h3>
+          <form id="auth-form" class="auth-form">
+            <div class="form-grid">
+              <label class="full" id="auth-fullname-field" style="display:none;">
+                Full name
+                <input name="full_name" placeholder="Ayesha Khan" />
+              </label>
+              <label class="full">
+                Email
+                <input name="email" type="email" placeholder="you@example.com" required />
+              </label>
+              <label class="full">
+                Password
+                <input name="password" type="password" placeholder="Password" required />
+              </label>
+            </div>
+            <div class="hero-actions">
+              <button class="button primary" type="submit" data-mode="login">Sign In</button>
+              <button class="button secondary" type="button" id="switch-auth">Create Account</button>
+            </div>
+            <div id="auth-feedback" class="notice"></div>
+          </form>
+          <hr style="margin:24px 0;border-color:rgba(255,255,255,0.12);" />
+          <form id="booking-form">
+            <div class="form-grid">
+              <label>
+                Full name
+                <input name="customer_name" placeholder="Ayesha Khan" required />
+              </label>
+              <label>
+                Phone number
+                <input name="phone" placeholder="+92 300 0000000" required />
+              </label>
+              <label>
+                Email address
+                <input name="email" type="email" placeholder="you@example.com" />
+              </label>
+              <label>
+                City
+                <input name="city" placeholder="Lahore" required />
+              </label>
+              <label>
+                Venue
+                <input name="venue" placeholder="The Grand Hall" required />
+              </label>
+              <label>
+                Event date
+                <input name="event_date" type="date" required />
+              </label>
+              <label>
+                Event type
+                <select name="event_type" required>
+                  <option value="wedding">Wedding</option>
+                  <option value="mehndi">Mehndi</option>
+                  <option value="walima">Walima</option>
+                  <option value="engagement">Engagement</option>
+                  <option value="corporate">Corporate</option>
+                  <option value="concert">Concert</option>
+                  <option value="birthday">Birthday</option>
+                  <option value="other">Other</option>
+                </select>
+              </label>
+              <label>
+                Budget
+                <input name="budget" type="number" min="0" step="500" placeholder="50000" />
+              </label>
+              <label>
+                Decoration type
+                <select name="decoration_type">
+                  <option value="">Select one</option>
+                  <option value="floral">Floral</option>
+                  <option value="themed">Themed</option>
+                  <option value="stage_setup">Stage Setup</option>
+                  <option value="walkway">Walkway</option>
+                  <option value="other">Other</option>
+                </select>
+              </label>
+              <label>
+                Lighting type
+                <select name="lighting_type">
+                  <option value="">Select one</option>
+                  <option value="wedding_lighting">Wedding Lighting</option>
+                  <option value="stage_lighting">Stage Lighting</option>
+                  <option value="architectural_lighting">Architectural Lighting</option>
+                  <option value="pixel_led">Pixel LED</option>
+                  <option value="smart_rgb">Smart RGB</option>
+                  <option value="other">Other</option>
+                </select>
+              </label>
+              <label class="full">
+                Pixel requirement
+                <input name="pixel_requirement" placeholder="LED wall, pixel mapping, DJ stage, etc." />
+              </label>
+              <label class="full">
+                Special notes
+                <textarea name="special_notes" placeholder="Tell us about your mood, colors, and goals for the event."></textarea>
+              </label>
+            </div>
+            <button class="button primary" type="submit">Submit Request</button>
+            <div id="form-feedback" class="notice"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> GOLD Px. Premium event lighting and decor.</p>
+      <p>Backend route: /api/v1/bookings</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

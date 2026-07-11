@@ -1,0 +1,23 @@
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker, Session
+
+from app.core.config import settings
+
+engine = create_engine(
+    settings.DATABASE_URL,
+    pool_pre_ping=True,
+    pool_size=10,
+    max_overflow=20,
+    future=True,
+)
+
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine, future=True)
+
+
+def get_db() -> Session:
+    """FastAPI dependency: yields a DB session and guarantees it is closed."""
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
