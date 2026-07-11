@@ -1,4 +1,4 @@
-﻿const API_URL = 'https://ihassandev.pythonanywhere.com/api';
+const API_URL = '?? https://del-holders-collected-principles.trycloudflare.com/api';
 
 export async function getBookings() {
   const res = await fetch(${API_URL}/bookings);
@@ -13,3 +13,4 @@ export async function createBooking(data) {
   });
   return res.json();
 }
+
