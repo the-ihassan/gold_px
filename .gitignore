@@ -1,0 +1,18 @@
+﻿# React / Node
+node_modules/
+npm-debug.log*
+build/
+dist/
+.env
+.env.local
+
+# Python / Flask
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db
