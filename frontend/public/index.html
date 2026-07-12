@@ -1,1 +1,69 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>GOLD PX - Premium Lighting Technology</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="stylesheet" href="../src/styles/main.css"><style>body{background:var(--bg-primary);color:var(--text-primary)}.loader{position:fixed;inset:0;background:var(--bg-primary);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity 0.8s ease}.loader .logo{font-size:3rem;font-weight:800;color:var(--color-gold);font-family:var(--font-secondary)}.loader .logo span{color:var(--color-cyan)}.loader .bar{width:200px;height:3px;background:var(--bg-tertiary);border-radius:10px;margin:1rem 0;overflow:hidden}.loader .bar-inner{height:100%;width:0%;background:linear-gradient(90deg,var(--color-gold),var(--color-cyan))}.loader p{color:var(--text-tertiary);font-size:0.9rem}</style></head><body><div class="loader" id="loader"><div class="logo">GOLD<span>PX</span></div><div class="bar"><div class="bar-inner" id="progress"></div></div><p id="status">Loading...</p></div><main id="main" style="display:none;"></main><script>(function(){const l=document.getElementById("loader"),m=document.getElementById("main"),b=document.getElementById("progress"),s=document.getElementById("status");const files=["../src/components/Navigation/Navigation.html","../src/sections/Hero/Hero.html","../src/sections/Services/Services.html","../src/sections/Portfolio/Portfolio.html","../src/components/Footer/Footer.html"];let i=0;function next(){if(i>=files.length){s.textContent="Ready!";b.style.width="100%";setTimeout(()=>{l.classList.add("hidden");setTimeout(()=>{l.style.display="none";m.style.display="block";},300)},500);return}s.textContent="Loading "+files[i].split("/").pop()+"...";fetch(files[i]).then(r=>r.text()).then(h=>{m.innerHTML+=h;b.style.width=(((i+1)/files.length)*100)+"%";i++;next();}).catch(()=>{i++;next();})}next();})();</script></body></html>
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  
+<!-- New FormSubmit Contact Form -->
+<form action="https://formsubmit.co/el/vapoma" method="POST" class="contact-form">
+    <!-- Hidden fields for FormSubmit -->
+    <input type="hidden" name="_captcha" value="true">
+    <input type="hidden" name="_template" value="box">
+    <input type="hidden" name="_subject" value="New Booking from GOLD PX Website">
+    <input type="hidden" name="_next" value="https://the-ihassan.github.io/gold_px/thank-you.html">
+
+    <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" name="name" id="name" placeholder="Enter your name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" name="email" id="email" placeholder="your@email.com" required>
+    </div>
+    <div class="form-group">
+        <label for="message">Message / Event Details *</label>
+        <textarea name="message" id="message" rows="4" placeholder="Tell us about your event..." required></textarea>
+    </div>
+    <button type="submit" class="btn-gold btn-full">Send Booking Request</button>
+</form>
+
+</body>
+</html>
+
+

@@ -1,0 +1,16 @@
+﻿:root {
+  --gold: #D4AF37;
+  --cyan: #00E5FF;
+  --dark: #0B0D12;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: var(--dark);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
