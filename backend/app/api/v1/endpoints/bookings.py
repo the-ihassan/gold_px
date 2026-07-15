@@ -17,7 +17,7 @@ from app.schemas.booking import (
 from app.schemas.common import PaginatedResponse
 from app.api.deps import get_current_user, get_optional_current_user, require_min_role
 from app.services.booking_service import add_timeline_event, is_valid_transition, new_booking_reference
-from app.services.notification_service import log_whatsapp_notification
+from app.services.notification_service import log_whatsapp_notification, notify_admin_booking, build_admin_whatsapp_links
 
 router = APIRouter()
 
@@ -76,6 +76,22 @@ def create_booking(
             f"Our team will reach out shortly with a quotation."
         ),
     )
+
+    message = (
+        f"New GOLD Px booking request\n"
+        f"Reference: {booking.reference_no}\n"
+        f"Name: {booking.customer_name}\n"
+        f"Phone: {booking.phone}\n"
+        f"Email: {booking.email or 'N/A'}\n"
+        f"City: {booking.city}\n"
+        f"Venue: {booking.venue}\n"
+        f"Event: {booking.event_type.value}\n"
+        f"Date: {booking.event_date}\n"
+        f"Budget: {booking.budget or 'N/A'}\n"
+        f"Notes: {booking.special_notes or 'N/A'}"
+    )
+    notify_admin_booking(db, booking.id, f"GOLD Px booking request {booking.reference_no}", message)
+    build_admin_whatsapp_links(message)
 
     db.commit()
     db.refresh(booking)

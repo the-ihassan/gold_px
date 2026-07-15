@@ -1,11 +1,14 @@
+import asyncio
 import uuid
 from datetime import datetime, timezone
 from typing import Optional
 from sqlalchemy.orm import Session
 
+from app.core.config import settings
 from app.models.notification import NotificationLog
 from app.models.enums import NotificationChannel, NotificationStatus
-from app.services.whatsapp_service import build_customer_whatsapp_link
+from app.services.email_service import send_email
+from app.services.whatsapp_service import build_customer_whatsapp_link, build_business_whatsapp_link
 
 
 def log_whatsapp_notification(
@@ -32,6 +35,28 @@ def log_whatsapp_notification(
     db.add(log)
     db.flush()
     return log
+
+
+def notify_admin_booking(db: Session, booking_id: Optional[uuid.UUID], subject: str, message: str) -> bool:
+    recipients = [email.strip() for email in getattr(settings, "ADMIN_NOTIFICATION_EMAILS", "ihassan.dev@outlook.com").split(",") if email.strip()]
+    try:
+        sent = asyncio.run(send_email(recipients, subject, message))
+    except Exception as exc:
+        sent = False
+        log_email_notification(db, booking_id, subject, message, False, error=str(exc))
+        return False
+
+    log_email_notification(db, booking_id, subject, message, sent)
+    return sent
+
+
+def build_admin_whatsapp_links(message: str) -> list[str]:
+    numbers = [
+        number.strip()
+        for number in getattr(settings, "ADMIN_WHATSAPP_NUMBERS", "923145355656,923335079575").split(",")
+        if number.strip()
+    ]
+    return [build_business_whatsapp_link(message) for _ in numbers]
 
 
 def log_email_notification(

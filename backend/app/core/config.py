@@ -34,12 +34,7 @@ class Settings(BaseSettings):
     def assemble_db_url(cls, v, info):
         if v:
             return v
-        data = info.data
-        return (
-            f"postgresql+psycopg2://{data.get('POSTGRES_USER')}:"
-            f"{data.get('POSTGRES_PASSWORD')}@{data.get('POSTGRES_HOST')}:"
-            f"{data.get('POSTGRES_PORT')}/{data.get('POSTGRES_DB')}"
-        )
+        return "sqlite:///./goldpx_dev.sqlite3"
 
     # ---- Redis / Celery ----
     REDIS_HOST: str = "redis"
@@ -93,6 +88,8 @@ class Settings(BaseSettings):
     SMTP_PASSWORD: Optional[str] = None
     SMTP_FROM_EMAIL: str = "no-reply@goldpx.com"
     SMTP_FROM_NAME: str = "GOLD Px"
+    ADMIN_NOTIFICATION_EMAILS: str = "ihassan.dev@outlook.com"
+    ADMIN_WHATSAPP_NUMBERS: str = "923145355656,923335079575"
 
     # SMS provider (Twilio etc.) - placeholder until keys are supplied
     SMS_PROVIDER_ENABLED: bool = False

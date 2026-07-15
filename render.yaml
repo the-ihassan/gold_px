@@ -3,4 +3,5 @@ services:
     name: gold-px-backend
     env: python
     buildCommand: pip install -r backend/requirements.txt
-    startCommand: gunicorn app:app
+    startCommand: cd backend && gunicorn app:app
+
